@@ -15,6 +15,7 @@ on:
 
 env:
   SERVERCHAN_SCKEY: true
+  RELEASE_TAG: X86
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -43,4 +44,4 @@ jobs:
         run: |
           curl -k --data token="${{ secrets.PUSH_PLUS_TOKEN }}" --data title="开始编译$RELEASE_TAG-$(date +"%Y.%m.%d-%H%M")" --data "content=🎉 主人：正在为您编译新的$RELEASE_TAG-$(date +"%Y.%m.%d-%H%M"),请耐心等待...... 😋💐" "http://www.pushplus.plus/send"
           echo $SERVERCHAN_SCKEY
-          echo "$title"
+          echo "开始编译$RELEASE_TAG-$(date +"%Y.%m.%d-%H%M")"
