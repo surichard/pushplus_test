@@ -51,6 +51,6 @@ jobs:
         run: |
           export DTM=$(date +"%Y.%m.%d-%H%M")
           export RT=$RELEASE_TAG
-          curl -k -H "Content-Type: application/json" -X POST -d '{"token":"${{ secrets.PUSHPLUS_TOKEN }}","title":"\"${RT}\"","content":"{\"name\":\"$DTM\"}","topic":"","template":"json"}' http://www.pushplus.plus/send
+          curl -k -H "Content-Type: application/json" -X POST -d '{"token":"${{ secrets.PUSHPLUS_TOKEN }}","title":${RT},"content":"{\"name\":$DTM}","topic":"","template":"json"}' http://www.pushplus.plus/send
           echo $SERVERCHAN_SCKEY
           echo "开始编译$RELEASE_TAG-$(date +"%Y.%m.%d-%H%M")"
