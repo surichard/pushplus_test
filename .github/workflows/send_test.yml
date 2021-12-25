@@ -42,6 +42,5 @@ jobs:
         if: env.SERVERCHAN_SCKEY == 'true'
         run: |
           curl -k --data token="${{ secrets.PUSH_PLUS_TOKEN }}" --data title="开始编译$RELEASE_TAG-$(date +"%Y.%m.%d-%H%M")" --data "content=🎉 主人：正在为您编译新的$RELEASE_TAG-$(date +"%Y.%m.%d-%H%M"),请耐心等待...... 😋💐" "http://www.pushplus.plus/send"
-          echo "${{ secrets.PUSH_PLUS_TOKEN }}"
           echo $SERVERCHAN_SCKEY
-          echo '$title"
+          echo "$title"
